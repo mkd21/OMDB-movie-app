@@ -1,0 +1,12 @@
+@media(min-width : 1400px)
+{
+    .parent-container 
+    {
+        /* background-color: rgb(223, 213, 200); */
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 9rem;
+    }
+}

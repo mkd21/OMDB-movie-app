@@ -1,0 +1,17 @@
+@media(min-width : 700px)
+{
+    .navbar-Brand 
+    {
+        margin-left: 7rem;
+    }
+    .navbarItems
+    {
+        width : 30rem;
+    }
+
+    .navbarLiColors
+    {
+        color: black;
+        text-decoration: none;
+    }
+}
