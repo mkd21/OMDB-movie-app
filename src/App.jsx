@@ -37,9 +37,10 @@ import { HomeComp } from "./using-app-layout/Components/HomeComp.jsx";
 import { AboutComp } from "./using-app-layout/Components/AboutComp.jsx";
 import { MoviesComp } from "./using-app-layout/Components/MoviesComp.jsx";
 import {ContactComp} from "./using-app-layout/Components/ContactComp.jsx";
+import { MovieDetails } from "./using-app-layout/Components/MovieDetails.jsx";
 
 import { ErrorComp } from "./using-app-layout/Components/ErrorComp.jsx";
-import { dataFetch } from "./using-app-layout/DataFetchFunction/dataFetch.js";
+
 
 const routes = createBrowserRouter([
   {
@@ -59,6 +60,10 @@ const routes = createBrowserRouter([
       {
         path: "/movies",
         element : <MoviesComp />
+      },
+      {
+        path : "/movies/:movieId",
+        element : <MovieDetails />
       },
       {
         path : "/contact",

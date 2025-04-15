@@ -22,12 +22,13 @@ export function MoviesComp()
         dataFetcher();
     } , []);
 
+   
     if(receivedData.length == 0) return <h1>Loading Movies..</h1>
     return (
         <>
             <section className={ParentContaineStyle["parent-container"]} >
                 {
-                    receivedData.Search.map( (iter) => <Cards key={iter.imdbID} MovieTitle = {iter.Title} MovieImage = {iter.Poster} MovieReleaseDate = {iter.Year} /> )
+                    receivedData.Search.map( (iter) => <Cards key={iter.imdbID} MovieTitle = {iter.Title} MovieImage = {iter.Poster} MovieReleaseDate = {iter.Year} MovieID = {iter.imdbID} /> )
                 }
             </section>
         </>
