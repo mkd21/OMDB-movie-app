@@ -6,6 +6,9 @@ import { movieDetailsFetch } from "../DataFetchFunction/movieDetails";
 
 import MovideDetailsCardStyle from "../../ModuleCss/CardStyles/movieDetailsCardStyle.module.css";
 
+
+import {FadeLoader} from "react-spinners";
+
 function DollarToINR(receivedAmount)
 {
     if( typeof receivedAmount == "string")
@@ -35,10 +38,14 @@ export function MovieDetails()
 
     } , [] );
 
-        if(movieDetails)
-        {
-            return (
-                <div className={MovideDetailsCardStyle.card}>
+
+    return (
+
+        <div className={MovideDetailsCardStyle["parent-container-card-details"]} >
+            { 
+                movieDetails ?
+
+                (<div className={MovideDetailsCardStyle.card}>
                     <div className={MovideDetailsCardStyle.posterContainer}>
                         <img src={movieDetails.Poster} alt="movie poster" className={MovideDetailsCardStyle.poster} />
                     </div>
@@ -91,11 +98,12 @@ export function MovieDetails()
 
                         </div>
                     </div>
-                </div>
-            );
-        }
-        else 
-        {
-            return <h1>Loading Data</h1>
-        }
+                </div>)
+                :
+
+                (<FadeLoader height={15} margin={12} radius={22} width={8}/>)
+            }
+        </div>
+
+    );
 }
